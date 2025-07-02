@@ -1,0 +1,125 @@
+.staff-dashboard-container {
+    max-width: 100%;
+    margin: 30px auto 30px 240px;
+    padding: 32px 24px 48px 24px;
+    background: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 3px 12px rgba(0, 0, 0, 0.1);
+    box-sizing: border-box;
+  }
+  
+  .staff-dashboard-container h2 {
+    margin-bottom: 28px;
+    color: #e74c3c;
+    font-size: 2rem;
+    font-weight: bold;
+  }
+  
+  .staff-stats-grid {
+    display: flex;
+    gap: 24px;
+    margin-bottom: 32px;
+    flex-wrap: wrap;
+  }
+  
+  .staff-stat-card {
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.07);
+    padding: 24px 32px;
+    min-width: 180px;
+    flex: 1;
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    border-left: 6px solid #e74c3c;
+    transition: box-shadow 0.2s;
+  }
+  .staff-stat-card:hover {
+    box-shadow: 0 4px 16px rgba(0,0,0,0.13);
+  }
+  .stat-icon {
+    font-size: 2.2rem;
+    margin-right: 8px;
+    min-width: 40px;
+    text-align: center;
+  }
+  .stat-value {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #263238;
+  }
+  .stat-label {
+    color: #888;
+    font-size: 1.05rem;
+  }
+  .staff-dashboard-section {
+    margin-top: 32px;
+  }
+  .staff-dashboard-section h3 {
+    font-size: 1.1rem;
+    margin-bottom: 10px;
+    color: #e67e22;
+  }
+  .recent-activity-list {
+    list-style: disc;
+    margin-left: 24px;
+    color: #444;
+    font-size: 1.05rem;
+  }
+  .recent-activity-list li {
+    margin-bottom: 6px;
+  }
+  
+  .incident-table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  
+  .incident-table th,
+  .incident-table td {
+    border: 1px solid #ddd;
+    padding: 10px;
+    text-align: left;
+  }
+  
+  .incident-table th {
+    background-color: #f5f5f5;
+  }
+  
+  .status-badge {
+    padding: 4px 10px;
+    border-radius: 6px;
+    font-size: 14px;
+    color: #fff;
+  }
+  
+  .status-badge.pending {
+    background-color: #e67e22;
+  }
+  
+  .status-badge.in-progress {
+    background-color: #3498db;
+  }
+  
+  .status-badge.resolved {
+    background-color: #2ecc71;
+  }
+  
+  select {
+    padding: 6px 10px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+  }
+  
+  @media (max-width: 900px) {
+    .staff-dashboard-container {
+      margin-left: 0;
+      padding: 16px 4px 32px 4px;
+    }
+    .staff-stats-grid {
+      flex-direction: column;
+      gap: 12px;
+    }
+  }
+  

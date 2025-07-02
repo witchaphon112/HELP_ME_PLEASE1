@@ -1,0 +1,124 @@
+.profile-container {
+  margin-left: 240px;
+  padding: 32px 24px 48px 24px;
+  min-height: 80vh;
+  background: #f5f6fa;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.profile-header {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 24px;
+}
+
+.profile-back {
+  color: #888;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.2s;
+}
+.profile-back:hover {
+  color: #e67e22;
+}
+
+.profile-logout {
+  background: #e74c3c;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  padding: 8px 20px;
+  font-weight: 600;
+  font-size: 16px;
+  cursor: pointer;
+  box-shadow: 0 2px 8px rgba(231,76,60,0.08);
+  transition: background 0.2s, box-shadow 0.2s;
+}
+.profile-logout:hover {
+  background: #c0392b;
+  box-shadow: 0 4px 16px rgba(231,76,60,0.13);
+}
+
+.profile-card {
+  background: #fff;
+  border-radius: 18px;
+  box-shadow: 0 2px 16px rgba(0,0,0,0.07);
+  padding: 32px 24px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 18px;
+  min-width: 320px;
+  max-width: 420px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.profile-avatar {
+  width: 96px;
+  height: 96px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #ffe5d0 0%, #fff7f6 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 12px;
+  font-size: 48px;
+  color: #e67e22;
+  box-shadow: 0 2px 8px rgba(230,126,34,0.08);
+  border: 3px solid #fff7f6;
+}
+
+.profile-name {
+  font-size: 22px;
+  font-weight: 700;
+  color: #222;
+  margin-bottom: 2px;
+  text-align: center;
+}
+
+.profile-role {
+  color: #888;
+  font-size: 16px;
+  margin-bottom: 8px;
+  text-align: center;
+}
+
+.profile-info-list {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  font-size: 1.08rem;
+}
+.profile-info-list strong {
+  color: #e67e22;
+  font-weight: 600;
+}
+
+@media (max-width: 600px) {
+  .profile-container {
+    max-width: 98vw;
+    padding: 12px 2vw;
+    min-height: 90vh;
+    margin-left: 0;
+  }
+  .profile-card {
+    padding: 18px 6px;
+    min-width: unset;
+    max-width: 99vw;
+  }
+  .profile-avatar {
+    width: 72px;
+    height: 72px;
+    font-size: 36px;
+  }
+  .profile-name {
+    font-size: 18px;
+  }
+}

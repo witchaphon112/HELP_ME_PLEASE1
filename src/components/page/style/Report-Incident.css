@@ -1,0 +1,141 @@
+.report-incident-container {
+    max-width: 900px;
+    margin: 30px auto;
+    padding: 24px;
+    background: #ffffff;
+    border-radius: 16px;
+  }
+  
+  .report-incident-container h2 {
+    margin-bottom: 20px;
+    color: #e74c3c;
+    font-size: 2rem;
+    font-weight: 700;
+  }
+  
+  .incident-form {
+    background: #fff;
+    border-radius: 12px;
+    padding: 24px;
+    margin-left: 10rem;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+  }
+  
+  .incident-type-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 18px;
+    margin-bottom: 24px;
+  }
+  
+  .incident-type-btn {
+    background: #fafbfc;
+    border: 2px solid #e0e0e0;
+    border-radius: 12px;
+    padding: 32px 0 18px 0;
+    font-size: 1.15rem;
+    font-weight: 500;
+    color: #222;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    cursor: pointer;
+    transition: border 0.2s, box-shadow 0.2s;
+  }
+  .incident-type-btn.selected {
+    border: 2.5px solid #e74c3c;
+    box-shadow: 0 2px 12px rgba(231,76,60,0.08);
+    background: #fff3f1;
+  }
+  .incident-type-icon {
+    font-size: 2.2rem;
+    margin-bottom: 10px;
+  }
+  
+  .incident-form .form-group {
+    margin-bottom: 18px;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .incident-form label {
+    font-weight: 600;
+    margin-bottom: 6px;
+  }
+  
+  .incident-form input[type="text"],
+  .incident-form textarea,
+  .incident-form select {
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    resize: vertical;
+  }
+  
+  .incident-form textarea {
+    min-height: 80px;
+  }
+  
+  .incident-location-row {
+    display: flex;
+    gap: 24px;
+  }
+  
+  .map-mock {
+    background: #f4f4f6;
+    border: 2px dashed #e0e0e0;
+    border-radius: 10px;
+    min-height: 90px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    color: #888;
+    font-size: 1.1rem;
+  }
+  
+  .attachment-box {
+    border: 2px dashed #e0e0e0;
+    border-radius: 10px;
+    padding: 24px 0 12px 0;
+    background: #fafbfc;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .submit-btn {
+    background-color: #e74c3c;
+    color: #fff;
+    border: none;
+    padding: 14px 0;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 20px;
+    transition: background 0.3s;
+    margin-top: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+  }
+  
+  .submit-btn:hover {
+    background-color: #c0392b;
+  }
+  
+  @media (max-width: 900px) {
+    .incident-type-grid {
+      grid-template-columns: 1fr 1fr;
+    }
+    .incident-location-row {
+      flex-direction: column;
+      gap: 0;
+    }
+    .map-mock {
+      margin-top: 12px;
+    }
+  }
+  
