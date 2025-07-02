@@ -1,5 +1,3 @@
-// mock.ts - mock data สำหรับ incidents ใช้ได้ทั้งฝั่ง page และ page-staff
-
 export interface IncidentMock {
   id: number;
   type: string;

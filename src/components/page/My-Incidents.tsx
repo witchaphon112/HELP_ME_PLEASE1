@@ -15,7 +15,6 @@ export default function MyIncidents() {
   const [incidents, setIncidents] = useState<Incident[]>([]);
   const [userEmail, setUserEmail] = useState('');
 
-  // ฟังก์ชันโหลดข้อมูลเหตุฉุกเฉินของ user
   const loadIncidents = () => {
     const user = JSON.parse(localStorage.getItem('user') || '{}');
     setUserEmail(user?.email || '');
@@ -25,7 +24,6 @@ export default function MyIncidents() {
 
   useEffect(() => {
     loadIncidents();
-    // อัปเดตอัตโนมัติเมื่อ localStorage เปลี่ยน (เช่น แจ้งเหตุใหม่)
     const handleStorage = (e: StorageEvent) => {
       if (e.key === 'mockIncidents') {
         loadIncidents();

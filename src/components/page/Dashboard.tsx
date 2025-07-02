@@ -1,4 +1,3 @@
-// components/dashboard/Dashboard.jsx
 import React from 'react';
 import './style/Dashboard.css';
 

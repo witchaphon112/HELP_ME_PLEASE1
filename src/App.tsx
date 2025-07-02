@@ -2,7 +2,6 @@ import { useState, useEffect } from 'react';
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import './App.css';
 
-// Import components
 import Navbar from './components/layout/Navbar';
 import Sidebar from './components/layout/Sidebar';
 import Register from "./components/auth/Register";
@@ -19,12 +18,9 @@ import Profile from './components/page/Profile';
 import MyIncidents from './components/page/My-Incidents';
 
 function App() {
-  // สถานะสำหรับเก็บข้อมูลผู้ใช้ที่ล็อกอินแล้ว
   const [user, setUser] = useState(null);
-  // สถานะสำหรับควบคุมการแสดง Sidebar
   const [sidebarOpen, setSidebarOpen] = useState(true);
   
-  // โหลดข้อมูลผู้ใช้จาก localStorage เมื่อคอมโพเนนต์โหลด
   useEffect(() => {
     const savedUser = localStorage.getItem('user');
     if (savedUser) {
@@ -32,22 +28,18 @@ function App() {
     }
   }, []);
 
-  // ฟังก์ชันสำหรับการล็อกอิน
   const handleLogin = (userData: any) => {
     setUser(userData);
-    // บันทึกข้อมูลใน localStorage
     localStorage.setItem('user', JSON.stringify(userData));
     localStorage.setItem('token', userData.token);
   };
 
-  // ฟังก์ชันสำหรับการล็อกเอาท์
   const handleLogout = () => {
     setUser(null);
     localStorage.removeItem('user');
     localStorage.removeItem('token');
   };
   
-  // ฟังก์ชันสำหรับเปิด/ปิด Sidebar
   const toggleSidebar = () => {
     setSidebarOpen(!sidebarOpen);
   };
@@ -79,23 +71,19 @@ function App() {
                   <Route path="/profile" element={<Profile />} />
                   <Route path="/my-incidents" element={<MyIncidents />} />
                   <Route path="/profile" element={<Profile />} />
-                  {/* เพิ่ม routes สำหรับผู้ใช้ที่ล็อกอินแล้ว */}
                   <Route path="/login" element={<Navigate to="/dashboard" />} />
                   <Route path="/register" element={<Register />} />
-                  {/* Add other routes here */}
                 </Routes>
               </main>
             </div>
           </>
         ) : (
-          // แสดง Navbar และหน้าล็อกอิน/ลงทะเบียนเมื่อยังไม่ได้ล็อกอิน
           <>
             <Navbar />
             <main className="main-content">
               <Routes>
                 <Route path="/register" element={<Register />} />
                 <Route path="/login" element={<Login onLogin={handleLogin} />} />
-                {/* ถ้าไม่ได้ล็อกอินและพยายามเข้าถึงหน้าอื่น ให้ redirect ไปที่หน้า login */}
                 <Route path="*" element={<Navigate to="/login" />} />
               </Routes>
             </main>

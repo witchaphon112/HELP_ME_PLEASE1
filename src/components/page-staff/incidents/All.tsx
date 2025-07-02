@@ -9,11 +9,9 @@ export default function AllIncidents() {
   const [noteInput, setNoteInput] = useState('');
   const [mapModal, setMapModal] = useState<{lat: number, lng: number} | null>(null);
 
-  // โหลดข้อมูลจาก localStorage ทุกครั้งที่ mount และเมื่อ localStorage เปลี่ยน
   useEffect(() => {
     const load = () => {
       let all = JSON.parse(localStorage.getItem('mockIncidents') || '[]');
-      // ถ้า localStorage ว่าง ให้เติม mockIncidents
       if (!Array.isArray(all) || all.length === 0) {
         localStorage.setItem('mockIncidents', JSON.stringify(mockIncidents));
         all = mockIncidents;
@@ -122,7 +120,6 @@ export default function AllIncidents() {
           ))}
         </tbody>
       </table>
-      {/* Modal แผนที่ */}
       {mapModal && (
         <div style={{
           position: 'fixed', left: 0, top: 0, width: '100vw', height: '100vh', background: 'rgba(0,0,0,0.35)', zIndex: 9999,

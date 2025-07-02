@@ -7,7 +7,7 @@ interface SidebarProps {
   toggleSidebar?: () => void;
   user?: {
     name: string;
-    role: string; // 'student', 'staff', 'admin'
+    role: string; 
   } | null;
   onLogout?: () => void;
 }
@@ -22,7 +22,6 @@ const Sidebar = ({ isOpen = true, toggleSidebar, user, onLogout }: SidebarProps)
     setActiveSubmenu(activeSubmenu === menu ? null : menu);
   };
 
-  // แจ้งเตือนสำหรับ staff/admin: นับ incident ที่รอการตอบสนอง
   useEffect(() => {
     if (user?.role === 'staff' || user?.role === 'admin') {
       const all = JSON.parse(localStorage.getItem('mockIncidents') || '[]');
@@ -81,7 +80,6 @@ const Sidebar = ({ isOpen = true, toggleSidebar, user, onLogout }: SidebarProps)
         </div>
       )}
 
-      {/* แจ้งเตือนสำหรับ staff/admin */}
       {user && (user.role === 'staff' || user.role === 'admin') && (
         <div className="sidebar-notification" style={{ display: 'flex', alignItems: 'center', margin: isOpen ? '12px 0 8px 0' : '12px 0', justifyContent: isOpen ? 'flex-start' : 'center' }}>
           <Link to="/page-staff/incidents/Pending" className="sidebar-notification-link" style={{ position: 'relative', display: 'flex', alignItems: 'center', color: '#e67e22', fontWeight: 600, fontSize: 18, textDecoration: 'none' }}>

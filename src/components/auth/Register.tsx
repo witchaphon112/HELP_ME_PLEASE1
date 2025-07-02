@@ -32,15 +32,12 @@ const Register = () => {
     }
     setLoading(true);
     setError('');
-    // mock: เพิ่ม user ใหม่ใน localStorage
     const newUser = {
       email,
       password,
       user: { name, role: 'student', token: 'mock-token' }
     };
-    // ดึง users เดิมจาก localStorage (หรือ array ว่าง)
     const users = JSON.parse(localStorage.getItem('mockUsers') || '[]');
-    // เช็คซ้ำ
     if (users.find((u: any) => u.email === email) || mockUsers.find((u) => u.email === email)) {
       setError('อีเมลนี้ถูกใช้ไปแล้ว');
       setLoading(false);

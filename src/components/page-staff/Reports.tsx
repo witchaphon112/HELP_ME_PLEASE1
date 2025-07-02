@@ -32,19 +32,16 @@ export default function Reports() {
     return () => window.removeEventListener('storage', load);
   }, []);
 
-  // รวมสถิติตามประเภท
   const typeStats = incidents.reduce((acc, inc) => {
     acc[inc.type] = (acc[inc.type] || 0) + 1;
     return acc;
   }, {} as Record<string, number>);
 
-  // รวมสถิติตามสถานะ (ตอบสนอง)
   const statusStats = incidents.reduce((acc, inc) => {
     acc[inc.status] = (acc[inc.status] || 0) + 1;
     return acc;
   }, {} as Record<string, number>);
 
-  // Mock เวลาตอบสนองเฉลี่ย (นาที)
   const avgResponseTime = 12;
 
   return (
@@ -54,7 +51,6 @@ export default function Reports() {
         รายงานและสถิติ
       </h2>
 
-      {/* การ์ดสรุปสถานะ */}
       <div style={{ display: 'flex', gap: 18, flexWrap: 'wrap', marginBottom: 32 }}>
         <div style={{ flex: 1, minWidth: 180, background: '#fff', borderRadius: 14, boxShadow: '0 2px 12px rgba(52,152,219,0.07)', padding: 20, display: 'flex', alignItems: 'center', gap: 16 }}>
           <i className="fa-regular fa-clock" style={{ color: '#f39c12', fontSize: 32 }}></i>
@@ -86,7 +82,6 @@ export default function Reports() {
         </div>
       </div>
 
-      {/* รายงานจำนวนเหตุฉุกเฉินตามประเภท */}
       <div className="staff-dashboard-section">
         <h3 style={{ display: 'flex', alignItems: 'center', gap: 8, color: '#e67e22', fontWeight: 700 }}>
           <i className="fas fa-layer-group"></i> สรุปจำนวนเหตุฉุกเฉินตามประเภท

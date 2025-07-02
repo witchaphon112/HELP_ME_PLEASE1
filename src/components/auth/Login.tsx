@@ -28,9 +28,7 @@ const Login: React.FC<LoginProps> = ({ onLogin }) => {
     e.preventDefault();
     setLoading(true);
     setError('');
-    // ดึง users จาก localStorage
     const localUsers = JSON.parse(localStorage.getItem('mockUsers') || '[]');
-    // รวมกับ mockUsers (staff/student)
     const allUsers = [...localUsers, ...mockUsers];
     const found = allUsers.find(
       (u) => u.email === email && u.password === password

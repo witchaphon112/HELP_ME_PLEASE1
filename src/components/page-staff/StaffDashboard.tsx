@@ -9,7 +9,6 @@ export default function StaffDashboard() {
     const load = () => {
       let all = JSON.parse(localStorage.getItem('mockIncidents') || '[]');
       if (!Array.isArray(all) || all.length === 0) {
-        // ไม่ควรเกิดขึ้นถ้า init แล้ว แต่กันไว้
         all = [];
       }
       setIncidents(all);
@@ -30,7 +29,6 @@ export default function StaffDashboard() {
     { label: 'เสร็จสิ้น', value: resolved, icon: 'fas fa-check-circle', color: '#2ecc71' },
   ];
 
-  // Mock กิจกรรมล่าสุด (อาจจะดึงจาก incidents จริงได้)
   const recent = incidents.slice(-3).reverse();
 
   return (
