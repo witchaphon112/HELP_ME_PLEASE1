@@ -33,6 +33,8 @@ export default function ResolvedIncidents() {
             <th>สถานที่</th>
             <th>สถานะ</th>
             <th>การจัดการ</th>
+            <th>ไฟล์แนบ</th>
+            <th>แผนที่</th>
           </tr>
         </thead>
         <tbody>
@@ -63,10 +65,26 @@ export default function ResolvedIncidents() {
               <td>
                 <span>-</span>
               </td>
+              <td>{inc.fileName ? inc.fileName : '-'}</td>
+              <td>
+                {typeof inc.lat === 'number' && typeof inc.lng === 'number' ? (
+                  <a
+                    href={`https://maps.google.com/?q=${inc.lat},${inc.lng}`}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    style={{ color: '#e74c3c', textDecoration: 'underline' }}
+                  >
+                    ดูแผนที่
+                  </a>
+                ) : (
+                  '-'
+                )}
+              </td>
             </tr>
           ))}
         </tbody>
       </table>
+      {/* Modal แผนที่ */}
       {mapModal && (
         <div style={{
           position: 'fixed', left: 0, top: 0, width: '100vw', height: '100vh', background: 'rgba(0,0,0,0.35)', zIndex: 9999,
